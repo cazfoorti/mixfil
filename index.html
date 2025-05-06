@@ -16,35 +16,39 @@
 
     header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       background: #ffffff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
-    nav a {
+    .header-logo {
+      height: 40px;
+    }
+
+    .nav-links a {
       margin: 0 1rem;
       text-decoration: none;
       color: #111;
       font-weight: 600;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       color: #555;
     }
 
     .hero {
-      padding: 60px 20px;
+      padding: 80px 20px 60px;
     }
 
     .hero img.logo {
-      height: 100px;
-      margin-bottom: 1.5rem;
+      height: 160px;
+      margin-bottom: 2rem;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
 
@@ -86,12 +90,24 @@
     .btn-outline:hover {
       background: #eee;
     }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero img.logo {
+        height: 120px;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Navigation Bar -->
   <header>
-    <nav>
+    <img src="https://i.imgur.com/Xy4FAa6.png" alt="Mixfil Logo" class="header-logo" />
+    <nav class="nav-links">
       <a href="#">Home</a>
       <a href="#">Marketplace</a>
       <a href="#">Submit</a>
@@ -99,8 +115,9 @@
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <img src="https://i.imgur.com/Xy4FAa6.png" alt="Mixfil Logo" class="logo" />
+    <img src="https://i.imgur.com/Xy4FAa6.png" alt="Mixfil Logo Large" class="logo" />
     <h1>One-Stop Marketplace for Creative IPs</h1>
     <p>Buy and sell full licenses to Short Films, Games, Comics, and Art — all in one place.</p>
     <div class="buttons">
