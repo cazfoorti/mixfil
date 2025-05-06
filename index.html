@@ -14,163 +14,58 @@
       --transition: 0.3s;
       --container-width: 1200px;
     }
-    * {
-      box-sizing: border-box;
-    }
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Inter', sans-serif;
-      background: var(--color-bg);
-      color: var(--color-primary);
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color var(--transition);
-    }
-    a:hover {
-      color: var(--color-accent);
-    }
-    .container {
-      width: 90%;
-      max-width: var(--container-width);
-      margin: 0 auto;
-    }
+    * { box-sizing: border-box; }
+    body, html { margin: 0; padding: 0; height: 100%; font-family: 'Inter', sans-serif; background: var(--color-bg); color: var(--color-primary); }
+    a { text-decoration: none; color: inherit; transition: color var(--transition); }
+    a:hover { color: var(--color-accent); }
+    .container { width: 90%; max-width: var(--container-width); margin: 0 auto; }
 
     /* NAVIGATION */
     header {
       background: #fff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 100;
+      position: fixed; width: 100%; top: 0; z-index: 100;
     }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
-    }
-    .nav-logo {
-      height: 70px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      font-weight: 600;
-    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+    .nav-logo { height: 90px; }
+    .nav-links { display: flex; gap: 2rem; font-weight: 600; }
 
     /* HERO */
     .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      height: 100vh;
-      padding: 0 1rem;
-      animation: fadeIn var(--transition) ease-out;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; height: 100vh; padding: 0 1rem; animation: fadeIn var(--transition) ease-out;
     }
-    .hero-logo {
-      height: 180px;
-      margin-bottom: 1rem;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin: 0.5rem 0;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--color-accent);
-      max-width: 600px;
-      margin-bottom: 1.5rem;
-    }
-    .buttons {
-      display: flex;
-      gap: 1rem;
-    }
-    .btn {
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background var(--transition), transform var(--transition);
-    }
-    .btn-primary {
-      background: var(--color-primary);
-      color: #fff;
-      border: none;
-    }
-    .btn-primary:hover {
-      background: #333;
-      transform: translateY(-2px);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--color-primary);
-      color: var(--color-primary);
-    }
-    .btn-outline:hover {
-      background: #eee;
-      transform: translateY(-2px);
-    }
+    .hero-logo { height: 220px; margin-bottom: 1rem; }
+    .hero h1 { font-size: 3rem; margin: 0.5rem 0; }
+    .hero p { font-size: 1.1rem; color: var(--color-accent); max-width: 600px; margin-bottom: 1.5rem; }
+    .buttons { display: flex; gap: 1rem; }
+    .btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background var(--transition), transform var(--transition); }
+    .btn-primary { background: var(--color-primary); color: #fff; border: none; }
+    .btn-primary:hover { background: #333; transform: translateY(-2px); }
+    .btn-outline { background: transparent; border: 2px solid var(--color-primary); color: var(--color-primary); }
+    .btn-outline:hover { background: #eee; transform: translateY(-2px); }
 
     /* CATEGORIES */
-    .categories {
-      padding: 4rem 0;
-      background: #fff;
-    }
-    .categories h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-    }
+    .categories { padding: 4rem 0; background: #fff; }
+    .categories h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
     .card {
-      background: var(--color-bg);
-      padding: 2rem 1rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      text-align: center;
-      animation: fadeIn var(--transition) ease-out;
+      background: var(--color-bg); padding: 2rem 1rem; border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; animation: fadeIn var(--transition) ease-out;
     }
-    .card img {
-      height: 60px;
-      margin-bottom: 1rem;
-    }
-    .card h3 {
-      margin: 0;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
+    .card img { height: 80px; margin-bottom: 1rem; }
+    .card h3 { margin: 0; font-size: 1.1rem; font-weight: 600; }
 
     /* FOOTER */
-    footer {
-      background: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--color-accent);
+    footer { background: #fff; padding: 2rem 1rem; text-align: center;
+      font-size: 0.9rem; color: var(--color-accent);
       box-shadow: 0 -2px 4px rgba(0,0,0,0.02);
     }
-    footer a {
-      margin: 0 0.5rem;
-    }
+    footer a { margin: 0 0.5rem; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 600px) {
-      .hero-logo { height: 120px; }
+      .hero-logo { height: 150px; }
       .hero h1 { font-size: 2rem; }
     }
   </style>
@@ -207,19 +102,19 @@
       <h2>Explore by Category</h2>
       <div class="grid">
         <div class="card">
-          <img src="https://via.placeholder.com/60" alt="Short Films">
+          <img src="https://img.icons8.com/fluency/96/000000/video-file-icon.png" alt="Short Films">
           <h3>Short Films</h3>
         </div>
         <div class="card">
-          <img src="https://via.placeholder.com/60" alt="Games">
+          <img src="https://img.icons8.com/fluency/96/000000/controller.png" alt="Games">
           <h3>Games</h3>
         </div>
         <div class="card">
-          <img src="https://via.placeholder.com/60" alt="Comics">
+          <img src="https://img.icons8.com/fluency/96/000000/comic.png" alt="Comics">
           <h3>Comics</h3>
         </div>
         <div class="card">
-          <img src="https://via.placeholder.com/60" alt="Art">
+          <img src="https://img.icons8.com/fluency/96/000000/paint-palette.png" alt="Art">
           <h3>Art</h3>
         </div>
       </div>
