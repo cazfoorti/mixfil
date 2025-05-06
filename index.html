@@ -3,102 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MIXFIL | Marketplace for Creators</title>
+  <meta name="description" content="MIXFIL — Buy and sell full licenses to Short Films, Games, Comics, and Art in one professional marketplace." />
+  <title>MIXFIL | Marketplace for Creative IPs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --color-primary: #111;
+      --color-bg: #f9f9f9;
+      --color-accent: #555;
+      --transition: 0.3s;
+      --container-width: 1200px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #111;
-      text-align: center;
+      background: var(--color-bg);
+      color: var(--color-primary);
     }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: #ffffff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .header-logo {
-      height: 40px;
-    }
-
-    .nav-links a {
-      margin: 0 1rem;
+    a {
       text-decoration: none;
-      color: #111;
+      color: inherit;
+      transition: color var(--transition);
+    }
+    a:hover {
+      color: var(--color-accent);
+    }
+    .container {
+      width: 90%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    .nav-logo {
+      height: 70px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
       font-weight: 600;
     }
 
-    .nav-links a:hover {
-      color: #555;
-    }
-
+    /* HERO */
     .hero {
-      padding: 80px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+      padding: 0 1rem;
+      animation: fadeIn var(--transition) ease-out;
     }
-
-    .hero img.logo {
-      height: 160px;
-      margin-bottom: 2rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
+    .hero-logo {
+      height: 180px;
       margin-bottom: 1rem;
     }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #555;
-      max-width: 600px;
-      margin: 0 auto 2rem auto;
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0.5rem 0;
     }
-
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--color-accent);
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+    }
     .buttons {
       display: flex;
-      justify-content: center;
       gap: 1rem;
     }
-
-    .buttons a {
+    .btn {
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
       font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
     }
-
     .btn-primary {
-      background: #111;
-      color: white;
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
     }
-
     .btn-primary:hover {
       background: #333;
+      transform: translateY(-2px);
     }
-
     .btn-outline {
-      border: 2px solid #111;
-      color: #111;
+      background: transparent;
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
     }
-
     .btn-outline:hover {
       background: #eee;
+      transform: translateY(-2px);
+    }
+
+    /* CATEGORIES */
+    .categories {
+      padding: 4rem 0;
+      background: #fff;
+    }
+    .categories h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--color-bg);
+      padding: 2rem 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+      animation: fadeIn var(--transition) ease-out;
+    }
+    .card img {
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--color-accent);
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.02);
+    }
+    footer a {
+      margin: 0 0.5rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero img.logo {
-        height: 120px;
-      }
+      .hero-logo { height: 120px; }
+      .hero h1 { font-size: 2rem; }
     }
   </style>
 </head>
@@ -106,25 +179,64 @@
 
   <!-- Navigation Bar -->
   <header>
-    <img src="https://i.imgur.com/Xy4FAa6.png" alt="Mixfil Logo" class="header-logo" />
-    <nav class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Marketplace</a>
-      <a href="#">Submit</a>
-      <a href="#">Login</a>
-    </nav>
+    <div class="container nav-inner">
+      <img src="https://i.imgur.com/Xy4FAa6.png" alt="Mixfil Logo" class="nav-logo" />
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Marketplace</a>
+        <a href="#">Submit</a>
+        <a href="#">Login</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <img src="https://i.imgur.com/Xy4FAa6.png" alt="Mixfil Logo Large" class="logo" />
+    <img src="https://i.imgur.com/Xy4FAa6.png" alt="Mixfil Logo" class="hero-logo" />
     <h1>One-Stop Marketplace for Creative IPs</h1>
     <p>Buy and sell full licenses to Short Films, Games, Comics, and Art — all in one place.</p>
     <div class="buttons">
-      <a href="#" class="btn-primary">Browse Projects</a>
-      <a href="#" class="btn-outline">Sell Your Work</a>
+      <a href="#" class="btn btn-primary">Browse Projects</a>
+      <a href="#" class="btn btn-outline">Sell Your Work</a>
     </div>
   </section>
+
+  <!-- Categories Preview -->
+  <section class="categories">
+    <div class="container">
+      <h2>Explore by Category</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://via.placeholder.com/60" alt="Short Films">
+          <h3>Short Films</h3>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/60" alt="Games">
+          <h3>Games</h3>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/60" alt="Comics">
+          <h3>Comics</h3>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/60" alt="Art">
+          <h3>Art</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 MIXFIL. All rights reserved.</p>
+      <p>
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Service</a> |
+        <a href="#">Contact Us</a>
+      </p>
+    </div>
+  </footer>
 
 </body>
 </html>
