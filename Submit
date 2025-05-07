@@ -3,20 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MIXFIL Upload</title>
+  <title>MIXFIL • Upload</title>
+  <style>
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fafafa;
+    }
+    header {
+      background: #333; color: #fff;
+      padding: 1rem 2rem;
+      display: flex; align-items: center;
+      animation: fadeInDown 0.8s ease both;
+    }
+    header img { height: 40px; margin-right: 1rem; }
+    header h1 { font-size: 1.25rem; }
+    main {
+      padding: 2rem; max-width: 600px;
+      margin: auto; animation: fadeIn 0.8s ease both;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px; margin-bottom: 1rem;
+      animation: fadeIn 1.2s both;
+    }
+    .gallery img {
+      width: 100%; border-radius: 4px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover { transform: scale(1.05); }
+    .upload-box {
+      background: #fff; padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 1s both;
+    }
+    input[type="file"] { margin: 1rem 0; }
+    button {
+      background: #4CAF50; color: #fff;
+      border: none; padding: 0.75rem 1.5rem;
+      border-radius: 6px; cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    button:hover { background: #45a049; transform: translateY(-2px); }
+    #progressContainer {
+      width: 100%; background: #eee;
+      border-radius: 6px; overflow: hidden;
+      margin-top: 1rem; height: 16px;
+    }
+    #progressBar {
+      width: 0; height: 100%;
+      background: #4CAF50;
+      transition: width 0.3s;
+    }
+    #preview img {
+      max-width: 100%; margin-top: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
-  <h1>Upload Your Work to MIXFIL</h1>
-  <input type="file" id="fileInput" />
-  <button onclick="uploadFile()">Upload</button>
+  <header>
+    <img src="https://i.imgur.com/Xy4FAa6.png" alt="MIXFIL logo">
+    <h1>MIXFIL Upload Center</h1>
+  </header>
+  <main>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/150x220?text=Game+1" alt="Game 1">
+      <img src="https://via.placeholder.com/150x220?text=Movie+1" alt="Movie 1">
+      <img src="https://via.placeholder.com/150x220?text=Game+2" alt="Game 2">
+      <img src="https://via.placeholder.com/150x220?text=Movie+2" alt="Movie 2">
+    </div>
+    <div class="upload-box">
+      <h2>Select Your File</h2>
+      <input type="file" id="fileInput" accept="image/*,video/*,application/zip,.pdf,.mp4" />
+      <button onclick="uploadFile()">Upload</button>
+      <div id="progressContainer">
+        <div id="progressBar"></div>
+      </div>
+      <div id="preview"></div>
+    </div>
+  </main>
 
-  <!-- Firebase SDKs -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-    import { getStorage, ref, uploadBytesResumable } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js";
+    import { getAuth, onAuthStateChanged }
+      from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+    import {
+      getStorage, ref, uploadBytesResumable, getDownloadURL
+    } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyCzT3TS9uL0dAGq-UKI50CLGl60b-9Wgmw",
       authDomain: "mixfil-platform.firebaseapp.com",
       projectId: "mixfil-platform",
-      storageBucket: "mixfil-platform.appspot.com",  // FIXED
+      storageBucket: "mixfil-platform.appspot.com",
+      messagingSenderId: "980465281116",
+      appId: "1:980465281116:web:a2392d25c16d319bf7de99"
+    };
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const storage = getStorage(app);
+
+    onAuthStateChanged(auth, user => {
+      if (!user) window.location.href = "login.html";
+    });
+
+    window.uploadFile = () => {
+      const file = document.getElementById("fileInput").files[0];
+      if (!file) return alert("Please select a file.");
+      const storageRef = ref(storage, "uploads/" + file.name);
+      const task = uploadBytesResumable(storageRef, file);
+
+      task.on("state_changed",
+        snapshot => {
+          const pct = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          document.getElementById("progressBar").style.width = pct + "%";
+        },
+        error => alert("Upload error: " + error.message),
+        () => {
+          getDownloadURL(task.snapshot.ref).then(url => {
+            const preview = document.getElementById("preview");
+            preview.innerHTML = `<p>Done! <a href="${url}" target="_blank">View file</a></p>`;
+            if (file.type.startsWith("image/")) {
+              preview.innerHTML += `<img src="${url}" alt="Preview">`;
+            }
+          });
+        }
+      );
+    };
+  </script>
+</body>
+</html>
