@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MIXFIL Upload</title>
+</head>
+<body>
+  <h1>Upload Your Work to MIXFIL</h1>
+  <input type="file" id="fileInput" />
+  <button onclick="uploadFile()">Upload</button>
+
+  <!-- Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getStorage, ref, uploadBytesResumable } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCzT3TS9uL0dAGq-UKI50CLGl60b-9Wgmw",
+      authDomain: "mixfil-platform.firebaseapp.com",
+      projectId: "mixfil-platform",
+      storageBucket: "mixfil-platform.appspot.com",  // FIXED
