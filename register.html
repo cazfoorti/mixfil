@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MIXFIL Register</title>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCzT3TS9uL0dAGq-UKI50CLGl60b-9Wgmw",
+      authDomain: "mixfil-platform.firebaseapp.com",
+      projectId: "mixfil-platform",
+      storageBucket: "mixfil-platform.appspot.com",
+      messagingSenderId: "980465281116",
+      appId: "1:980465281116:web:a2392d25c16d319bf7de99"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    window.register = () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          alert("Account created. Now you can log in.");
+          window.location.href = "login.html";
+        })
+        .catch(err => alert("Error: " + err.message));
+    };
+  </script>
+</head>
+<body>
+  <h2>Create Your MIXFIL Account</h2>
+  <input type="email" id="email" placeholder="Email" /><br>
+  <input type="password" id="password" placeholder="Password" /><br>
+  <button onclick="register()">Register</button>
+</body>
+</html>
