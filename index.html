@@ -16,70 +16,88 @@
       --container-width: 1200px;
     }
     * { box-sizing: border-box; }
-    body, html { margin: 0; padding: 0; height: 100%; font-family: 'Inter', sans-serif; background: var(--color-bg); color: var(--color-primary); }
+    body, html {
+      margin: 0; padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-primary);
+    }
     a { text-decoration: none; color: inherit; }
-    .container { width: 90%; max-width: var(--container-width); margin: 0 auto; }
+    .container {
+      width: 90%; max-width: var(--container-width);
+      margin: 0 auto;
+    }
 
     /* NAVIGATION */
     header {
       background: #fff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 100;
+      position: fixed; width: 100%; top: 0; z-index: 100;
       animation: fadeInDown var(--transition) ease-out;
     }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
-    .nav-logo { height: 90px; transition: transform var(--transition); }
+    .nav-inner {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    .nav-logo {
+      height: 90px;
+      transition: transform var(--transition);
+    }
     .nav-logo:hover { transform: scale(1.05); }
-    .nav-links { display: flex; gap: 2rem; font-weight: 600; }
+    .nav-links {
+      display: flex; gap: 2rem; font-weight: 600;
+    }
     .nav-links a {
-      position: relative;
-      padding: 0.5rem;
+      position: relative; padding: 0.5rem;
       transition: color var(--transition);
     }
     .nav-links a::after {
-      content: '';
-      position: absolute;
-      height: 2px;
-      background: var(--color-primary);
-      width: 0;
-      left: 0;
-      bottom: -2px;
+      content: ''; position: absolute;
+      height: 2px; background: var(--color-primary);
+      width: 0; left: 0; bottom: -2px;
       transition: width var(--transition);
     }
-    .nav-links a:hover {
-      color: var(--button-hover-bg);
-    }
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+    .nav-links a:hover { color: var(--button-hover-bg); }
+    .nav-links a:hover::after { width: 100%; }
 
     /* HERO */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px);} to { opacity: 1; transform: translateY(0);} }
+
     .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
       text-align: center;
-      height: 100vh;
-      padding: 0 1rem;
-      margin-top: 100px;
+      height: 100vh; padding: 0 1rem; margin-top: 100px;
       animation: fadeIn var(--transition) ease-out;
     }
-    .hero-logo { height: 220px; margin-bottom: 1rem; animation: fadeIn var(--transition) ease-out; }
-    .hero h1 { font-size: 3rem; margin: 0.5rem 0; animation: fadeIn var(--transition) ease-out; }
-    .hero p { font-size: 1.1rem; color: var(--color-accent); max-width: 600px; margin-bottom: 1.5rem; animation: fadeIn var(--transition) ease-out; }
+    .hero-logo {
+      height: 220px; margin-bottom: 1rem;
+      animation: fadeIn var(--transition) ease-out;
+    }
+    .hero h1 {
+      font-size: 3rem; margin: 0.5rem 0;
+      animation: fadeIn var(--transition) ease-out;
+    }
+    .hero p {
+      font-size: 1.1rem; color: var(--color-accent);
+      max-width: 600px; margin-bottom: 1.5rem;
+      animation: fadeIn var(--transition) ease-out;
+    }
 
     /* BUTTONS */
-    .buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .buttons {
+      display: flex; gap: 1rem;
+      flex-wrap: wrap; justify-content: center;
+    }
     .btn {
-      padding: 0.8rem 2rem;
-      border-radius: 9999px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      padding: 0.8rem 2rem; border-radius: 9999px;
+      font-weight: 600; cursor: pointer;
+      transition: background var(--transition),
+                  transform var(--transition),
+                  box-shadow var(--transition);
       animation: fadeIn var(--transition) ease-out;
     }
     .btn-primary {
@@ -90,7 +108,6 @@
     }
     .btn-primary:hover {
       background: var(--button-hover-bg);
-      color: #fff;
       transform: scale(1.05);
       box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
@@ -102,28 +119,50 @@
     }
     .btn-outline:hover {
       background: #fff;
-      border-color: var(--color-primary);
-      color: var(--color-primary);
       transform: scale(1.05);
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     /* CATEGORIES Preview */
-    .categories { padding: 4rem 0; background: #fff; }
-    .categories h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
-    .card { background: var(--color-bg); padding: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
-    .card:hover { transform: scale(1.03); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .card img { width: 100%; height: 140px; object-fit: cover; }
-    .card h3 { margin: 1rem 0; font-size: 1.1rem; font-weight: 600; }
+    .categories {
+      padding: 4rem 0; background: #fff;
+    }
+    .categories h2 {
+      text-align: center; font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--color-bg); border-radius: 12px;
+      overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform var(--transition),
+                  box-shadow var(--transition);
+    }
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%; height: 140px; object-fit: cover;
+    }
+    .card h3 {
+      margin: 1rem 0; font-size: 1.1rem;
+      font-weight: 600;
+    }
 
     /* FOOTER */
-    footer { background: #fff; padding: 2rem 1rem; text-align: center; font-size: 0.9rem; color: var(--color-accent); box-shadow: 0 -2px 4px rgba(0,0,0,0.02); }
+    footer {
+      background: #fff; padding: 2rem 1rem;
+      text-align: center; font-size: 0.9rem;
+      color: var(--color-accent);
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.02);
+    }
     footer a { margin: 0 0.5rem; }
-
-    /* Animations */
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 
     @media (max-width: 600px) {
       .hero-logo { height: 150px; }
@@ -136,7 +175,9 @@
   <!-- Navigation Bar -->
   <header>
     <div class="container nav-inner">
-      <a href="index.html"><img src="https://i.imgur.com/Xy4FAa6.png" alt="Mixfil Logo" class="nav-logo" /></a>
+      <a href="index.html">
+        <img src="https://i.imgur.com/Xy4FAa6.png" alt="Mixfil Logo" class="nav-logo" />
+      </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="marketplace.html">Marketplace</a>
