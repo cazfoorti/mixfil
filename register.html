@@ -1,7 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>MIXFIL Register</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MIXFIL • Register</title>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg,#1f1c2c,#928dab);
+      height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .container {
+      background: rgba(255,255,255,0.9);
+      padding: 2rem; border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      animation: fadeIn 0.8s ease-out both;
+      width: 320px; text-align: center;
+    }
+    .logo {
+      width: 120px; margin-bottom: 1rem;
+      animation: fadeIn 1.2s ease-out both;
+    }
+    input {
+      width: 100%; padding: 0.75rem; margin: 0.5rem 0;
+      border: 1px solid #aaa; border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+    input:focus { border-color: #4CAF50; outline: none; }
+    button {
+      background: #4CAF50;
+      color: #fff; border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px; cursor: pointer;
+      font-size: 1rem; margin-top: 1rem;
+      transition: background 0.3s, transform 0.2s;
+    }
+    button:hover { background: #45a049; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.imgur.com/Xy4FAa6.png" alt="MIXFIL logo" class="logo" />
+    <h2>Create Your Account</h2>
+    <input type="email" id="email" placeholder="Email Address" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="register()">Register</button>
+  </div>
+
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
@@ -14,7 +66,6 @@
       messagingSenderId: "980465281116",
       appId: "1:980465281116:web:a2392d25c16d319bf7de99"
     };
-
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
@@ -23,17 +74,11 @@
       const password = document.getElementById("password").value;
       createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
-          alert("Account created. Now you can log in.");
+          alert("Account created! Please log in.");
           window.location.href = "login.html";
         })
         .catch(err => alert("Error: " + err.message));
     };
   </script>
-</head>
-<body>
-  <h2>Create Your MIXFIL Account</h2>
-  <input type="email" id="email" placeholder="Email" /><br>
-  <input type="password" id="password" placeholder="Password" /><br>
-  <button onclick="register()">Register</button>
 </body>
 </html>
