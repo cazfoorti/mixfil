@@ -2,308 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mixfil – Discover Creative Work</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mixfil – Creative Marketplace</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom gradients or overrides */
+    .gradient-hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/hero-bg.jpg') center/cover no-repeat;
+    }
+  </style>
 </head>
-<body>
-  <header class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">Mixfil</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="marketplace.html">Marketplace</a></li>
-          <li><a href="submit.html">Submit</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Register</a></li>
-        </ul>
+<body class="font-sans antialiased text-gray-800">
+
+  <!-- NAVBAR -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600">Mixfil</a>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-gray-700 hover:text-indigo-600">Home</a>
+        <a href="marketplace.html" class="text-gray-700 hover:text-indigo-600">Marketplace</a>
+        <a href="submit.html" class="text-gray-700 hover:text-indigo-600">Submit</a>
+        <a href="login.html" class="text-gray-700 hover:text-indigo-600">Login</a>
+        <a href="register.html" class="text-gray-700 hover:text-indigo-600">Register</a>
       </nav>
     </div>
   </header>
-  <section class="hero">
-    <div class="container">
-      <h1>Discover & License Creative Works</h1>
-      <p>Short Films, Games, Comics, Art — All in one place.</p>
-      <form class="search-form">
-        <input type="text" placeholder="Search by title, tag, or genre...">
-        <button type="submit">Search</button>
+
+  <!-- HERO -->
+  <section class="gradient-hero h-[60vh] flex items-center">
+    <div class="container mx-auto px-6 text-center text-white">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Discover & License Creative Works</h1>
+      <p class="mb-6 text-lg md:text-2xl">Short Films, Games, Comics, Art — All in one place.</p>
+      <form class="max-w-xl mx-auto flex">
+        <input type="text" placeholder="Search by title, tag, or genre..." 
+               class="w-full rounded-l-lg px-4 py-3 text-gray-800 focus:outline-none" />
+        <button type="submit" 
+                class="bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-r-lg text-white font-semibold">
+          Search
+        </button>
       </form>
     </div>
   </section>
-  <section class="categories container">
-    <h2>Popular Categories</h2>
-    <div class="grid">
-      <div class="category-card"><img src="img/film.jpg" alt="Film"><h3>Short Films</h3></div>
-      <div class="category-card"><img src="img/game.jpg" alt="Games"><h3>Games</h3></div>
-      <div class="category-card"><img src="img/comic.jpg" alt="Comics"><h3>Comics</h3></div>
-      <div class="category-card"><img src="img/art.jpg" alt="Art"><h3>Art</h3></div>
-    </div>
-  </section>
-  <section class="featured-listings container">
-    <h2>Featured Listings</h2>
-    <div class="card-grid">
-      <div class="card">
-        <img src="img/listing1.jpg" alt="Listing 1">
-        <h3>Creative Work #1</h3>
-        <p>by Creator1</p>
-        <span>$11 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing2.jpg" alt="Listing 2">
-        <h3>Creative Work #2</h3>
-        <p>by Creator2</p>
-        <span>$12 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing3.jpg" alt="Listing 3">
-        <h3>Creative Work #3</h3>
-        <p>by Creator3</p>
-        <span>$13 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing4.jpg" alt="Listing 4">
-        <h3>Creative Work #4</h3>
-        <p>by Creator4</p>
-        <span>$14 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing5.jpg" alt="Listing 5">
-        <h3>Creative Work #5</h3>
-        <p>by Creator5</p>
-        <span>$15 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing6.jpg" alt="Listing 6">
-        <h3>Creative Work #6</h3>
-        <p>by Creator6</p>
-        <span>$16 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing7.jpg" alt="Listing 7">
-        <h3>Creative Work #7</h3>
-        <p>by Creator7</p>
-        <span>$17 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing8.jpg" alt="Listing 8">
-        <h3>Creative Work #8</h3>
-        <p>by Creator8</p>
-        <span>$18 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing9.jpg" alt="Listing 9">
-        <h3>Creative Work #9</h3>
-        <p>by Creator9</p>
-        <span>$19 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing10.jpg" alt="Listing 10">
-        <h3>Creative Work #10</h3>
-        <p>by Creator10</p>
-        <span>$20 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing11.jpg" alt="Listing 11">
-        <h3>Creative Work #11</h3>
-        <p>by Creator11</p>
-        <span>$21 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing12.jpg" alt="Listing 12">
-        <h3>Creative Work #12</h3>
-        <p>by Creator12</p>
-        <span>$22 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing13.jpg" alt="Listing 13">
-        <h3>Creative Work #13</h3>
-        <p>by Creator13</p>
-        <span>$23 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing14.jpg" alt="Listing 14">
-        <h3>Creative Work #14</h3>
-        <p>by Creator14</p>
-        <span>$24 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing15.jpg" alt="Listing 15">
-        <h3>Creative Work #15</h3>
-        <p>by Creator15</p>
-        <span>$25 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing16.jpg" alt="Listing 16">
-        <h3>Creative Work #16</h3>
-        <p>by Creator16</p>
-        <span>$26 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing17.jpg" alt="Listing 17">
-        <h3>Creative Work #17</h3>
-        <p>by Creator17</p>
-        <span>$27 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing18.jpg" alt="Listing 18">
-        <h3>Creative Work #18</h3>
-        <p>by Creator18</p>
-        <span>$28 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing19.jpg" alt="Listing 19">
-        <h3>Creative Work #19</h3>
-        <p>by Creator19</p>
-        <span>$29 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing20.jpg" alt="Listing 20">
-        <h3>Creative Work #20</h3>
-        <p>by Creator20</p>
-        <span>$30 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing21.jpg" alt="Listing 21">
-        <h3>Creative Work #21</h3>
-        <p>by Creator21</p>
-        <span>$31 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing22.jpg" alt="Listing 22">
-        <h3>Creative Work #22</h3>
-        <p>by Creator22</p>
-        <span>$32 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing23.jpg" alt="Listing 23">
-        <h3>Creative Work #23</h3>
-        <p>by Creator23</p>
-        <span>$33 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing24.jpg" alt="Listing 24">
-        <h3>Creative Work #24</h3>
-        <p>by Creator24</p>
-        <span>$34 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing25.jpg" alt="Listing 25">
-        <h3>Creative Work #25</h3>
-        <p>by Creator25</p>
-        <span>$35 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing26.jpg" alt="Listing 26">
-        <h3>Creative Work #26</h3>
-        <p>by Creator26</p>
-        <span>$36 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing27.jpg" alt="Listing 27">
-        <h3>Creative Work #27</h3>
-        <p>by Creator27</p>
-        <span>$37 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing28.jpg" alt="Listing 28">
-        <h3>Creative Work #28</h3>
-        <p>by Creator28</p>
-        <span>$38 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing29.jpg" alt="Listing 29">
-        <h3>Creative Work #29</h3>
-        <p>by Creator29</p>
-        <span>$39 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing30.jpg" alt="Listing 30">
-        <h3>Creative Work #30</h3>
-        <p>by Creator30</p>
-        <span>$40 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing31.jpg" alt="Listing 31">
-        <h3>Creative Work #31</h3>
-        <p>by Creator31</p>
-        <span>$41 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing32.jpg" alt="Listing 32">
-        <h3>Creative Work #32</h3>
-        <p>by Creator32</p>
-        <span>$42 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing33.jpg" alt="Listing 33">
-        <h3>Creative Work #33</h3>
-        <p>by Creator33</p>
-        <span>$43 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing34.jpg" alt="Listing 34">
-        <h3>Creative Work #34</h3>
-        <p>by Creator34</p>
-        <span>$44 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing35.jpg" alt="Listing 35">
-        <h3>Creative Work #35</h3>
-        <p>by Creator35</p>
-        <span>$45 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing36.jpg" alt="Listing 36">
-        <h3>Creative Work #36</h3>
-        <p>by Creator36</p>
-        <span>$46 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing37.jpg" alt="Listing 37">
-        <h3>Creative Work #37</h3>
-        <p>by Creator37</p>
-        <span>$47 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing38.jpg" alt="Listing 38">
-        <h3>Creative Work #38</h3>
-        <p>by Creator38</p>
-        <span>$48 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing39.jpg" alt="Listing 39">
-        <h3>Creative Work #39</h3>
-        <p>by Creator39</p>
-        <span>$49 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing40.jpg" alt="Listing 40">
-        <h3>Creative Work #40</h3>
-        <p>by Creator40</p>
-        <span>$50 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing41.jpg" alt="Listing 41">
-        <h3>Creative Work #41</h3>
-        <p>by Creator41</p>
-        <span>$51 license</span>
-      </div>
-      <div class="card">
-        <img src="img/listing42.jpg" alt="Listing 42">
-        <h3>Creative Work #42</h3>
-        <p>by Creator42</p>
-        <span>$52 license</span>
+
+  <!-- CATEGORIES -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Popular Categories</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="relative group overflow-hidden rounded-xl shadow-lg">
+          <img src="img/film.jpg" alt="Short Films" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <h3 class="text-white text-xl font-semibold">Short Films</h3>
+          </div>
+        </div>
+        <div class="relative group overflow-hidden rounded-xl shadow-lg">
+          <img src="img/game.jpg" alt="Games" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <h3 class="text-white text-xl font-semibold">Games</h3>
+          </div>
+        </div>
+        <div class="relative group overflow-hidden rounded-xl shadow-lg">
+          <img src="img/comic.jpg" alt="Comics" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <h3 class="text-white text-xl font-semibold">Comics</h3>
+          </div>
+        </div>
+        <div class="relative group overflow-hidden rounded-xl shadow-lg">
+          <img src="img/art.jpg" alt="Art" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <h3 class="text-white text-xl font-semibold">Art</h3>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Mixfil. All rights reserved.</p>
+
+  <!-- FEATURED LISTINGS -->
+  <section class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Featured Listings</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!-- Repeat these cards for however many listings you need -->
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition-shadow">
+          <img src="img/listing1.jpg" alt="Listing 1" class="w-full h-40 object-cover rounded-t-xl">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-2">Animated Short: The River</h3>
+            <p class="text-gray-600 mb-2">by Visionary Studio</p>
+            <div class="flex items-center justify-between">
+              <span class="text-indigo-600 font-bold">$25 license</span>
+              <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded">View</button>
+            </div>
+          </div>
+        </div>
+        <!-- copy/paste and update src and text for additional cards -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">What People Are Saying</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <blockquote class="bg-white p-6 rounded-xl shadow">
+          <p class="text-gray-700 italic mb-4">“Mixfil helped us find the perfect background animation for our documentary.”</p>
+          <cite class="block text-gray-900 font-medium">Maya Lin, Indie Producer</cite>
+        </blockquote>
+        <blockquote class="bg-white p-6 rounded-xl shadow">
+          <p class="text-gray-700 italic mb-4">“My comic series is finally reaching the audience it deserves.”</p>
+          <cite class="block text-gray-900 font-medium">Carlos Yuen, Comic Creator</cite>
+        </blockquote>
+        <blockquote class="bg-white p-6 rounded-xl shadow">
+          <p class="text-gray-700 italic mb-4">“The marketplace is smooth, reliable, and full of creative gems.”</p>
+          <cite class="block text-gray-900 font-medium">Jordan Malik, Game Developer</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="py-16 text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Join the Creative Revolution</h2>
+      <p class="text-gray-600 mb-6">Start selling or licensing creative work today — it's free to join.</p>
+      <a href="register.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-semibold">
+        Get Started
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t mt-16">
+    <div class="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-600 mb-4 md:mb-0">&copy; 2025 Mixfil. All rights reserved.</p>
+      <div class="space-x-4">
+        <a href="#" class="text-gray-600 hover:text-indigo-600">Terms</a>
+        <a href="#" class="text-gray-600 hover:text-indigo-600">Privacy</a>
+        <a href="#" class="text-gray-600 hover:text-indigo-600">Contact</a>
+      </div>
     </div>
   </footer>
+
 </body>
 </html>
