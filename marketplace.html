@@ -2,227 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Browse and license creative projects on MIXFIL’s Marketplace." />
-  <title>Marketplace | MIXFIL</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --color-primary: #e94560;
-      --color-bg: #1a1a2e;
-      --color-text: #ffffff;
-      --color-accent: #9a8c98;
-      --button-hover-bg: #c11f3a;
-      --transition: 0.3s;
-      --container-width: 1200px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body, html {
-      height: 100%;
-      font-family: 'Inter', sans-serif;
-      background: var(--color-bg);
-      color: var(--color-text);
-    }
-    a { text-decoration: none; color: inherit; transition: color var(--transition); }
-    a:hover { color: var(--color-primary); }
-
-    /* NAVIGATION */
-    header {
-      background: #16213e;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-    }
-    .nav-inner {
-      max-width: 90%;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
-    }
-    .nav-logo { height: 70px; }
-    .nav-links { display: flex; gap: 2rem; font-weight: 600; }
-
-    /* HERO */
-    .hero {
-      padding: 120px 1rem 40px;
-      text-align: center;
-      background: #16213e;
-    }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .hero p { color: var(--color-accent); }
-
-    /* GRID */
-    .container {
-      width: 90%;
-      max-width: var(--container-width);
-      margin: 0 auto;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0 4rem;
-    }
-    .card {
-      background: #16213e;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      display: flex;
-      flex-direction: column;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    }
-    .card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-    .card-body {
-      padding: 1rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .card-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .card-meta {
-      font-size: 0.9rem;
-      color: var(--color-accent);
-      margin-bottom: 1rem;
-    }
-    .btn {
-      display: inline-block;
-      text-align: center;
-      padding: 0.6rem 1.2rem;
-      border-radius: 9999px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background var(--transition), transform var(--transition);
-    }
-    .btn-primary {
-      background: var(--color-primary);
-      color: #fff;
-      border: none;
-    }
-    .btn-primary:hover {
-      background: var(--button-hover-bg);
-      transform: scale(1.05);
-    }
-
-    /* FOOTER */
-    footer {
-      background: #16213e;
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--color-accent);
-      box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
-    }
-    footer a { margin: 0 0.5rem; color: var(--color-text); }
-
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marketplace - Mixfil</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- Navigation Bar -->
-  <header>
-    <div class="nav-inner">
-      <a href="index.html">
-        <img src="https://i.imgur.com/Xy4FAa6.png" alt="MIXFIL Logo" class="nav-logo" />
-      </a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="marketplace.html">Marketplace</a>
-        <a href="submit.html">Submit</a>
-        <a href="login.html">Login</a>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Mixfil</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+        </ul>
       </nav>
     </div>
   </header>
-
-  <!-- Hero -->
-  <section class="hero">
+  <main class="main">
+    <h1>Marketplace</h1>
+    <!-- marketplace listings -->
+  </main>
+  <footer class="footer">
     <div class="container">
-      <h1>Marketplace</h1>
-      <p>Discover and license the best indie Short Films, Games, Comics, and Art.</p>
-    </div>
-  </section>
-
-  <!-- Listings Grid -->
-  <div class="container">
-    <div class="grid">
-      <!-- Short Films -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1518540001302-2af45d8e9c60?auto=format&fit=crop&w=300&q=80" alt="Indie Short Film">
-        <div class="card-body">
-          <div>
-            <div class="card-title">Midnight Echoes</div>
-            <div class="card-meta">By Luna Films</div>
-          </div>
-          <a href="#" class="btn btn-primary">View Details</a>
-        </div>
-      </div>
-      <!-- Games -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=80" alt="Indie Game">
-        <div class="card-body">
-          <div>
-            <div class="card-title">DreamScape Quest</div>
-            <div class="card-meta">By PixelForge</div>
-          </div>
-          <a href="#" class="btn btn-primary">View Details</a>
-        </div>
-      </div>
-      <!-- Comics -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1551029506-080ea15c6337?auto=format&fit=crop&w=300&q=80" alt="Comic Series">
-        <div class="card-body">
-          <div>
-            <div class="card-title">Cyber City Chronicles</div>
-            <div class="card-meta">By Neon Ink</div>
-          </div>
-          <a href="#" class="btn btn-primary">View Details</a>
-        </div>
-      </div>
-      <!-- Art -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1529196084260-3b47f7583ec4?auto=format&fit=crop&w=300&q=80" alt="Digital Art">
-        <div class="card-body">
-          <div>
-            <div class="card-title">Starlight Reverie</div>
-            <div class="card-meta">By AuraArt</div>
-          </div>
-          <a href="#" class="btn btn-primary">View Details</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 MIXFIL. All rights reserved.</p>
-      <p>
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms of Service</a> |
-        <a href="contact.html">Contact Us</a>
-      </p>
+      <p>&copy; 2025 Mixfil. All rights reserved.</p>
     </div>
   </footer>
-
 </body>
 </html>

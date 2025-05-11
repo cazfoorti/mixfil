@@ -1,79 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MIXFIL • Login</title>
-  <style>
-    @keyframes slideIn { from { transform: translateX(-100px); opacity:0;} to { transform: translateX(0); opacity:1;} }
-    body {
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg,#2a2b38,#464655);
-      height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-    }
-    .box {
-      background: rgba(255,255,255,0.95);
-      padding: 2rem; border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-      text-align: center; width: 300px;
-      animation: slideIn 0.8s ease-out both;
-    }
-    .logo { width: 100px; margin-bottom: 1rem; }
-    input {
-      width: 100%; padding: 0.75rem; margin: 0.5rem 0;
-      border: 1px solid #aaa; border-radius: 6px;
-      transition: border-color 0.3s;
-    }
-    input:focus { border-color: #1e88e5; outline: none; }
-    button {
-      background: #1e88e5; color: #fff;
-      border: none; padding: 0.75rem 1.5rem;
-      border-radius: 6px; cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-    }
-    button:hover { background: #1565c0; transform: translateY(-2px); }
-    p { margin-top: 1rem; font-size: 0.9rem; }
-    a { color: #1e88e5; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Mixfil</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="box">
-    <img src="https://i.imgur.com/Xy4FAa6.png" alt="MIXFIL logo" class="logo" />
-    <h2>Welcome Back to MIXFIL</h2>
-    <input type="email" id="email" placeholder="Email Address" />
-    <input type="password" id="password" placeholder="Password" />
-    <button onclick="login()">Log In</button>
-    <p>New here? <a href="register.html">Create an account</a></p>
-  </div>
-
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword }
-      from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyCzT3TS9uL0dAGq-UKI50CLGl60b-9Wgmw",
-      authDomain: "mixfil-platform.firebaseapp.com",
-      projectId: "mixfil-platform",
-      storageBucket: "mixfil-platform.appspot.com",
-      messagingSenderId: "980465281116",
-      appId: "1:980465281116:web:a2392d25c16d319bf7de99"
-    };
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    window.login = () => {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          window.location.href = "submit.html";
-        })
-        .catch(err => alert("Login failed: " + err.message));
-    };
-  </script>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Mixfil</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <h1>Login</h1>
+    <!-- login form here -->
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Mixfil. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
