@@ -9,59 +9,75 @@
   <style>
     /* Hero background with darker overlay */
     .gradient-hero {
-      background-image: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)),
-                        url('https://hips.hearstapps.com/hmg-prod/images/mh-4-5-video-game-movies-1617651239.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*');
-      background-size: cover;
-      background-position: center;
+      background-image: none; /* video covers background */
     }
   </style>
 </head>
 <body class="font-sans text-gray-900 antialiased">
 
   <!-- NAVBAR -->
-  <header class="bg-white shadow-sm fixed w-full z-50">
-    <div class="max-w-7xl mx-auto px-6 py-1 flex items-center justify-between">
+  <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-xl">
+    <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+      <!-- Logo -->
       <a href="index.html" class="flex-shrink-0">
-        <img src="https://i.imgur.com/MPsp1px.png" alt="Mixfil Logo" class="h-24 w-auto">
+        <img src="https://i.imgur.com/MPsp1px.png" alt="Mixfil Logo" class="h-28 w-auto" />
       </a>
-      <nav class="hidden md:flex space-x-10 text-gray-700">
-        <a href="index.html" class="hover:text-indigo-600 font-medium">Home</a>
-        <a href="marketplace.html" class="hover:text-indigo-600 font-medium">Marketplace</a>
-        <a href="submit.html" class="hover:text-indigo-600 font-medium">Submit</a>
-        <a href="login.html" class="hover:text-indigo-600 font-medium">Login</a>
-        <a href="register.html" class="hover:text-indigo-600 font-medium">Register</a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-16 text-gray-800 uppercase tracking-wide text-lg font-semibold">
+        <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
+        <a href="marketplace.html" class="hover:text-indigo-600 transition">Marketplace</a>
+        <a href="submit.html" class="hover:text-indigo-600 transition">Submit</a>
       </nav>
-      <button class="md:hidden text-gray-700 focus:outline-none" aria-label="Open menu">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Desktop Actions -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="login.html" class="text-lg text-gray-800 hover:text-indigo-600 font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition">Login</a>
+        <a href="register.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-semibold shadow-md transition">Sign Up</a>
+      </div>
+      <!-- Mobile Toggle -->
+      <button id="nav-toggle" class="md:hidden text-gray-800 focus:outline-none" aria-label="Open menu">
+        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
     </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <a href="index.html" class="block px-8 py-3 border-b hover:bg-gray-50">Home</a>
+      <a href="marketplace.html" class="block px-8 py-3 border-b hover:bg-gray-50">Marketplace</a>
+      <a href="submit.html" class="block px-8 py-3 border-b hover:bg-gray-50">Submit</a>
+      <a href="login.html" class="block px-8 py-3 border-b hover:bg-gray-50">Login</a>
+      <a href="register.html" class="block px-8 py-3 hover:bg-gray-50">Sign Up</a>
+    </div>
   </header>
 
   <!-- HERO -->
-  <section class="gradient-hero h-screen flex items-center pt-28">
-    <div class="max-w-3xl mx-auto text-center px-6">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-        Empower Your Creativity<br>
-        Buy & Sell Original Works
-      </h1>
-      <p class="mt-4 text-lg md:text-xl text-gray-200">
-        Connect, license, and trade unique short films, games, comics, and artwork — all in one marketplace.
-      </p>
-      <form class="mt-8 flex justify-center">
-        <input type="text" placeholder="Search works, creators, or genres"
-               class="w-full max-w-lg px-6 py-3 rounded-l-full focus:outline-none shadow-lg">
-        <button type="submit"
-                class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-r-full font-semibold shadow-lg transition">
-          Search
-        </button>
-      </form>
+  <section class="relative h-screen overflow-hidden pt-28">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+      <source src="https://res.cloudinary.com/dheizxyxe/video/upload/v1747521798/20250517_1542_Cinematic_Pixel_Comic_simple_compose_01jvg6jnndf4j8qy21whdwmt7v_r6mjhu.mp4" type="video/mp4">
+    </video>
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <!-- Hero Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+          Empower Your Creativity<br>
+          Buy & Sell Original Works
+        </h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-8">
+          Connect, license, and trade unique reels, games, comics, and artwork — all in one marketplace.
+        </p>
+        <form class="mt-8 w-full flex justify-center px-6">
+          <input type="text" placeholder="Search works, creators, or genres" class="w-full max-w-lg px-6 py-3 rounded-l-full focus:outline-none shadow-lg">
+          <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-r-full font-semibold shadow-lg transition">Search</button>
+        </form>
+      </div>
     </div>
   </section>
 
   <!-- METRICS -->
-  <section class="py-16 bg-white">
+  <section class="pt-32 pb-16 bg-white">
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center px-6">
       <div class="p-6 bg-gray-50 rounded-lg shadow hover:shadow-md transition">
         <h3 class="text-3xl font-bold text-indigo-600">500+</h3>
@@ -85,10 +101,9 @@
       <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <a href="marketplace.html" class="group relative block overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition">
           <div class="h-56">
-            <img src="https://i.pinimg.com/originals/a0/9e/89/a09e89eb6c8485cc8b9573b52036736c.jpg"
-                 alt="Short Films" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+            <img src="https://i.pinimg.com/originals/a0/9e/89/a09e89eb6c8485cc8b9573b52036736c.jpg" alt="Reels" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <span class="text-white text-2xl font-semibold">Short Films</span>
+              <span class="text-white text-2xl font-semibold">Reels</span>
             </div>
           </div>
         </a>
@@ -104,15 +119,15 @@
           <div class="h-56">
             <img src="https://scified.com/topics/5443627495357583.jpg" alt="Comics" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <span class="text-white text-2xl font-semibold">Comics</span>
+              <span class="text-white text-2-xl font-semibold">Comics</span>
             </div>
           </div>
         </a>
         <a href="marketplace.html?category=art" class="group relative block overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition">
           <div class="h-56">
-            <img src="https://www.adobe.com/creativecloud/tools/media_1ac077388ccd80756781fa49096ee6fd3af1f5c90.png?width=750&format=png&optimize=medium" alt="Art" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+            <img src="https://www.adobe.com/creativecloud/tools/media_1ac077388ccd80756781fa49096ee6fd3af1f5c90.png" alt="Art" class="object-cover w -full h-full group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <span class="text-white text-2xl font-semibold">Art</span>
+              <span class="text-white text-2-xl font-semibold">Art</span>
             </div>
           </div>
         </a>
@@ -123,8 +138,8 @@
   <!-- FEATURED LISTINGS -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Featured Listings</h2>
-      <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <h2 class="text-3-xl md:text-4-xl font-bold text-center text-gray-800 mb-12">Featured Listings</h2>
+      <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols3 lg:grid-cols4">
         <div class="bg-gray-50 rounded-lg shadow-lg hover:shadow-xl transition">
           <img src="https://i.imgur.com/listing1.png" alt="Listing 1" class="rounded-t-lg w-full h-48 object-cover">
           <div class="p-4">
@@ -132,53 +147,49 @@
             <p class="text-gray-600 mb-4">by Visionary Studio</p>
             <div class="flex items-center justify-between">
               <span class="text-indigo-600 font-bold">$25 License</span>
-              <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-full font-semibold transition">
-                View
-              </a>
+              <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-full font-semibold transition">View</a>
             </div>
           </div>
         </div>
-        <!-- TODO: Repeat listing cards -->
+        <!-- Additional cards -->
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
   <section class="py-20 bg-gray-100">
-    <div class="max-w-5xl mx-auto text-center px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">What People Say</h2>
+    <div class="max-w-5-xl mx-auto text-center px-6">
+      <h2 class="text-3-xl md:text-4-xl font-bold text-gray-800 mb-12">What People Say</h2>
       <div class="grid gap-8 grid-cols-1 md:grid-cols-3">
-        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+        <blockquote class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
           <p class="italic text-gray-700 mb-4">“Mixfil helped us find the perfect background animation for our documentary.”</p>
           <cite class="block text-gray-900 font-medium">Maya Lin, Indie Producer</cite>
-        </div>
-        <!-- TODO: Additional testimonials -->
+        </blockquote>
       </div>
     </div>
   </section>
 
-  <!-- CALL TO ACTION -->
+  <!-- CTA -->
   <section class="py-20 bg-indigo-600 text-white">
-    <div class="max-w-3xl mx-auto text-center px-6">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Join the Creative Revolution</h2>
-      <p class="mb-8">Start selling or licensing creative work today — it's free to join.</p>
-      <a href="register.html" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold transition hover:bg-gray-100">
-        Get Started
-      </a>
+    <div class="max-w-3-xl mx-auto text-center px asdf-6">
+      <h2 class="text-3-xl md:text-4-xl font-bold mb-4">Join the Creative Revolution</h2>
+      <p class="mb-8">Start selling or licensing creative work today—it’s free to join.</p>
+      <a href="register.html" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Get Started</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="bg-gray-800 text-gray-400 py-12">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-      <p class="mb-4 md:mb-0">&copy; 2025 Mixfil. All rights reserved.</p>
+    <div class="max-w-7-xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <p>&copy; 2025 Mixfil. All rights reserved.</p>
       <div class="flex space-x-6">
-        <a href="#" class="hover:text-white transition">Terms</a>
-        <a href="#" class="hover:text-white transition">Privacy</a>
-        <a href="#" class="hover:text-white transition">Contact</a>
+        <a href="#" class="hover:text-white">Terms</a>
+        <a href="#" class="hover:text-white">Privacy</a>
+        <a href="#" class="hover:text-white">Contact</a>
       </div>
     </div>
   </footer>
 
 </body>
 </html>
+
