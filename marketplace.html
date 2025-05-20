@@ -1,7 +1,110 @@
+<!-- Mixfil Reels Page Complete Canvas -->
 <!DOCTYPE html>
-<html>
-<head><title>Marketplace</title></head>
-<body>
-<h1>Marketplace</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mixfil – Reels</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-900 antialiased bg-gray-50">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html"><img src="https://i.imgur.com/MPsp1px.png" alt="Mixfil Logo" class="h-16 w-auto"></a>
+      <nav class="hidden md:flex space-x-8 text-gray-700 uppercase font-medium">
+        <a href="index.html" class="hover:text-indigo-600">Home</a>
+        <a href="marketplace.html" class="hover:text-indigo-600">Marketplace</a>
+        <a href="submit.html" class="hover:text-indigo-600">Submit</a>
+      </nav>
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="login.html" class="hover:text-indigo-600">Login</a>
+        <a href="register.html" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">Sign Up</a>
+      </div>
+      <button id="nav-toggle" class="md:hidden text-2xl">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO: Autoplay Background Video with Overlay and Text -->
+  <section id="reels-hero" class="relative pt-24 h-screen overflow-hidden">
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+      <source src="https://res.cloudinary.com/dheizxyxe/video/upload/v1747700444/Gen-4_Turbo_Create_a_10_second_1920_1080_cinematic_commercial_using_the_uploaded_LA_downtown_skyline_with_logo_00_02s_Wide_ground_level_dolly_in_on_the_skyline_at_golden_hour_Add_subtle_lens_flare_vrqvvm.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-black bg-opacity-0"></div>
+    
+  </section>
+
+  <!-- HERO TEXT BELOW VIDEO -->
+  <section class="bg-white py-20">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h1 class="text-6xl font-extrabold text-gray-900 mb-4">Reels</h1>
+      <p class="text-2xl text-gray-700">Explore dynamic video reels crafted by creators worldwide.</p>
+    </div>
+  </section>
+
+  <!-- BROWSE BY TYPE -->
+  <section id="reels-type" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-gray-900 mb-8">Browse by Type</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+        <!-- AI Generated -->
+        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+          <img src="https://miro.medium.com/v2/resize:fit:1400/1*e66nJ5bODBMQknNLyHl7_A.png" alt="AI Generated" class="w-full h-40 object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <span class="text-white font-semibold">AI Generated</span>
+          </div>
+        </a>
+        <!-- Short Reels -->
+        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+          <img src="https://images.unsplash.com/photo-1566895291281-ea63efd4bdbc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8OSUzQTE2fGVufDB8fDB8fHww" alt="Short Reels" class="w-full h-40 object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <span class="text-white font-semibold">Short Reels</span>
+          </div>
+        </a>
+        <!-- Stock Footage -->
+        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+          <img src="https://121clicks.com/wp-content/uploads/2023/10/stock-footage-01.jpg" alt="Stock Footage" class="w-full h-40 object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <span class="text-white font-semibold">Stock Footage</span>
+          </div>
+        </a>
+        <!-- VFX -->
+        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+          <img src="https://www.fxelements.com/_next/image?url=https%3A%2F%2Ffxelements.nyc3.digitaloceanspaces.com%2Fimages%2Fheader_bg%2FFreePage-Header-poster.jpg&w=3840&q=75" alt="VFX" class="w-full h-40 object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <span class="text-white font-semibold">VFX</span>
+          </div>
+        </a>
+        <!-- Animated -->
+        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+          <img src="https://damassets.autodesk.net/content/dam/autodesk/www/industry/3d-animation/create-beautiful-3d-animations-thumb-1204x677.jpg" alt="Animated" class="w-full h-40 object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <span class="text-white font-semibold">Animated</span>
+          </div>
+        </a>
+        <!-- Live Action -->
+        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+          <img src="/images/types/live-action.jpg" alt="Live Action" class="w-full h-40 object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <span class="text-white font-semibold">Live Action</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t mt-16">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm text-gray-600">© 2025 Mixfil • All rights reserved.</p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#" class="text-gray-600 hover:text-indigo-600">Terms</a>
+        <a href="#" class="text-gray-600 hover:text-indigo-600">Privacy</a>
+        <a href="#" class="text-gray-600 hover:text-indigo-600">Contact</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
