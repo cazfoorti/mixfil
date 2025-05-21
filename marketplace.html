@@ -1,110 +1,181 @@
-<!-- Mixfil Reels Page Complete Canvas -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mixfil – Reels</title>
-  <!-- Tailwind CSS -->
+  <title>Marketplace – Mixfil</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="font-sans text-gray-900 antialiased bg-gray-50">
 
-  <!-- NAVBAR -->
-  <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html"><img src="https://i.imgur.com/MPsp1px.png" alt="Mixfil Logo" class="h-16 w-auto"></a>
-      <nav class="hidden md:flex space-x-8 text-gray-700 uppercase font-medium">
-        <a href="index.html" class="hover:text-indigo-600">Home</a>
-        <a href="marketplace.html" class="hover:text-indigo-600">Marketplace</a>
-        <a href="submit.html" class="hover:text-indigo-600">Submit</a>
+  <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-xl">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="https://i.imgur.com/MPsp1px.png" alt="Mixfil Logo" class="h-16 md:h-20 w-auto" />
+      </a>
+      <nav class="hidden md:flex space-x-10 lg:space-x-16 text-gray-800 uppercase tracking-wide text-base lg:text-lg font-semibold">
+        <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
+        <a href="marketplace.html" class="text-indigo-600 transition">Marketplace</a>
+        <a href="submit.html" class="hover:text-indigo-600 transition">Submit</a>
       </nav>
-      <div class="hidden md:flex items-center space-x-4">
-        <a href="login.html" class="hover:text-indigo-600">Login</a>
-        <a href="register.html" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">Sign Up</a>
+      <div class="hidden md:flex items-center space-x-4 lg:space-x-8">
+        <a href="login.html" class="text-base lg:text-lg text-gray-800 hover:text-indigo-600 font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition">Login</a>
+        <a href="register.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 lg:px-8 py-3 rounded-lg font-semibold shadow-md transition text-base lg:text-lg">Sign Up</a>
       </div>
-      <button id="nav-toggle" class="md:hidden text-2xl">☰</button>
+      <button id="nav-toggle" class="md:hidden text-gray-800 focus:outline-none" aria-label="Open menu">
+        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <a href="index.html" class="block px-8 py-3 border-b hover:bg-gray-50">Home</a>
+      <a href="marketplace.html" class="block px-8 py-3 border-b bg-gray-100 text-indigo-600">Marketplace</a>
+      <a href="submit.html" class="block px-8 py-3 border-b hover:bg-gray-50">Submit</a>
+      <a href="login.html" class="block px-8 py-3 border-b hover:bg-gray-50">Login</a>
+      <a href="register.html" class="block px-8 py-3 hover:bg-gray-50">Sign Up</a>
     </div>
   </header>
 
-  <!-- HERO: Autoplay Background Video with Overlay and Text -->
-  <section id="reels-hero" class="relative pt-24 h-screen overflow-hidden">
+  <section id="reels-hero" class="relative pt-28 md:pt-32 h-[50vh] md:h-[60vh] overflow-hidden">
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
       <source src="https://res.cloudinary.com/dheizxyxe/video/upload/v1747700444/Gen-4_Turbo_Create_a_10_second_1920_1080_cinematic_commercial_using_the_uploaded_LA_downtown_skyline_with_logo_00_02s_Wide_ground_level_dolly_in_on_the_skyline_at_golden_hour_Add_subtle_lens_flare_vrqvvm.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
-    <div class="absolute inset-0 bg-black bg-opacity-0"></div>
-    
-  </section>
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div> </section>
 
-  <!-- HERO TEXT BELOW VIDEO -->
-  <section class="bg-white py-20">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h1 class="text-6xl font-extrabold text-gray-900 mb-4">Reels</h1>
-      <p class="text-2xl text-gray-700">Explore dynamic video reels crafted by creators worldwide.</p>
+  <section class="bg-white py-12 md:py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4">Marketplace</h1>
+      <p class="text-xl md:text-2xl text-gray-700">Explore dynamic works crafted by creators worldwide.</p>
+      <form class="mt-8 w-full flex justify-center px-6" role="search">
+        <input type="text" placeholder="Search marketplace (e.g., 'sci-fi reels', 'pixel art games')" class="w-full max-w-xl px-6 py-3 rounded-l-full focus:outline-none border border-gray-300 shadow-sm text-gray-800">
+        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-r-full font-semibold shadow-sm transition">Search</button>
+      </form>
     </div>
   </section>
 
-  <!-- BROWSE BY TYPE -->
-  <section id="reels-type" class="py-16 bg-gray-50">
+  <section id="reels-type" class="py-16 bg-gray-100">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-gray-900 mb-8">Browse by Type</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center md:text-left">Browse by Type</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-        <!-- AI Generated -->
-        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
-          <img src="https://miro.medium.com/v2/resize:fit:1400/1*e66nJ5bODBMQknNLyHl7_A.png" alt="AI Generated" class="w-full h-40 object-cover">
+        <a href="marketplace.html?type=ai" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition aspect-w-1 aspect-h-1">
+          <img src="https://miro.medium.com/v2/resize:fit:1400/1*e66nJ5bODBMQknNLyHl7_A.png" alt="AI Generated" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-            <span class="text-white font-semibold">AI Generated</span>
+            <span class="text-white font-semibold text-center p-2">AI Generated</span>
           </div>
         </a>
-        <!-- Short Reels -->
-        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1566895291281-ea63efd4bdbc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8OSUzQTE2fGVufDB8fDB8fHww" alt="Short Reels" class="w-full h-40 object-cover">
+        <a href="marketplace.html?type=short-reels" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition aspect-w-1 aspect-h-1">
+          <img src="https://images.unsplash.com/photo-1566895291281-ea63efd4bdbc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8OSUzQTE2fGVufDB8fDB8fHww" alt="Short Reels" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-            <span class="text-white font-semibold">Short Reels</span>
+            <span class="text-white font-semibold text-center p-2">Short Reels</span>
           </div>
         </a>
-        <!-- Stock Footage -->
-        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
-          <img src="https://121clicks.com/wp-content/uploads/2023/10/stock-footage-01.jpg" alt="Stock Footage" class="w-full h-40 object-cover">
+        <a href="marketplace.html?type=stock-footage" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition aspect-w-1 aspect-h-1">
+          <img src="https://121clicks.com/wp-content/uploads/2023/10/stock-footage-01.jpg" alt="Stock Footage" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-            <span class="text-white font-semibold">Stock Footage</span>
+            <span class="text-white font-semibold text-center p-2">Stock Footage</span>
           </div>
         </a>
-        <!-- VFX -->
-        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
-          <img src="https://www.fxelements.com/_next/image?url=https%3A%2F%2Ffxelements.nyc3.digitaloceanspaces.com%2Fimages%2Fheader_bg%2FFreePage-Header-poster.jpg&w=3840&q=75" alt="VFX" class="w-full h-40 object-cover">
+        <a href="marketplace.html?type=vfx" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition aspect-w-1 aspect-h-1">
+          <img src="https://www.fxelements.com/_next/image?url=https%3A%2F%2Ffxelements.nyc3.digitaloceanspaces.com%2Fimages%2Fheader_bg%2FFreePage-Header-poster.jpg&w=3840&q=75" alt="VFX" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-            <span class="text-white font-semibold">VFX</span>
+            <span class="text-white font-semibold text-center p-2">VFX</span>
           </div>
         </a>
-        <!-- Animated -->
-        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
-          <img src="https://damassets.autodesk.net/content/dam/autodesk/www/industry/3d-animation/create-beautiful-3d-animations-thumb-1204x677.jpg" alt="Animated" class="w-full h-40 object-cover">
+        <a href="marketplace.html?type=animated" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition aspect-w-1 aspect-h-1">
+          <img src="https://damassets.autodesk.net/content/dam/autodesk/www/industry/3d-animation/create-beautiful-3d-animations-thumb-1204x677.jpg" alt="Animated" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-            <span class="text-white font-semibold">Animated</span>
+            <span class="text-white font-semibold text-center p-2">Animated</span>
           </div>
         </a>
-        <!-- Live Action -->
-        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
-          <img src="/images/types/live-action.jpg" alt="Live Action" class="w-full h-40 object-cover">
-          <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-            <span class="text-white font-semibold">Live Action</span>
+         <a href="marketplace.html?type=live-action" class="group relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition aspect-w-1 aspect-h-1">
+          <img src="https://via.placeholder.com/300x300.png?text=Live+Action" alt="Live Action" class="w-full h-full object-cover"> <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <span class="text-white font-semibold text-center p-2">Live Action</span>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-white border-t mt-16">
-    <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
-      <p class="text-sm text-gray-600">© 2025 Mixfil • All rights reserved.</p>
-      <div class="flex space-x-4 mt-4 md:mt-0">
-        <a href="#" class="text-gray-600 hover:text-indigo-600">Terms</a>
-        <a href="#" class="text-gray-600 hover:text-indigo-600">Privacy</a>
-        <a href="#" class="text-gray-600 hover:text-indigo-600">Contact</a>
+  <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-10 text-center md:text-left">Discover Works</h2>
+           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              <div class="bg-gray-50 rounded-lg shadow-lg hover:shadow-xl transition">
+                  <a href="marketplace-item.html?id=example1" class="block">
+                      <img src="https://via.placeholder.com/400x300/DDDDDD/808080?text=Sci-Fi+Loop" alt="Marketplace Item 1" class="rounded-t-lg w-full h-48 object-cover">
+                      <div class="p-4">
+                          <h3 class="text-xl font-semibold mb-1">Cybernetic Dreams Loop</h3>
+                          <p class="text-gray-500 text-sm mb-2">by FutureVisions</p>
+                          <p class="text-gray-700 mb-3 text-sm">Animated sci-fi background loop, perfect for streamers.</p>
+                          <div class="flex items-center justify-between">
+                              <span class="text-indigo-600 font-bold text-lg">$49</span>
+                              <span class="text-xs text-gray-500">Reels / Animated</span>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+              <div class="bg-gray-50 rounded-lg shadow-lg hover:shadow-xl transition">
+                 <a href="marketplace-item.html?id=example2" class="block">
+                      <img src="https://via.placeholder.com/400x300/DDEEFF/607090?text=Fantasy+Game+Art" alt="Marketplace Item 2" class="rounded-t-lg w-full h-48 object-cover">
+                      <div class="p-4">
+                          <h3 class="text-xl font-semibold mb-1">Enchanted Forest Pack</h3>
+                          <p class="text-gray-500 text-sm mb-2">by PixelSprite Co.</p>
+                          <p class="text-gray-700 mb-3 text-sm">A pack of 2D assets for platformer games. Tileset & characters.</p>
+                          <div class="flex items-center justify-between">
+                              <span class="text-indigo-600 font-bold text-lg">$75</span>
+                              <span class="text-xs text-gray-500">Games / Art</span>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+              <div class="bg-gray-50 rounded-lg shadow-lg hover:shadow-xl transition">
+                 <a href="marketplace-item.html?id=example3" class="block">
+                      <img src="https://via.placeholder.com/400x300/FFDDAA/907050?text=Short+Film+Still" alt="Marketplace Item 3" class="rounded-t-lg w-full h-48 object-cover">
+                      <div class="p-4">
+                          <h3 class="text-xl font-semibold mb-1">The Last Stand (Short)</h3>
+                          <p class="text-gray-500 text-sm mb-2">by Indie Flicks</p>
+                          <p class="text-gray-700 mb-3 text-sm">A 5-minute dramatic short film. Rights for festival use.</p>
+                          <div class="flex items-center justify-between">
+                              <span class="text-indigo-600 font-bold text-lg">$199</span>
+                              <span class="text-xs text-gray-500">Reels / Live Action</span>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+               <div class="bg-gray-50 rounded-lg shadow-lg hover:shadow-xl transition">
+                 <a href="marketplace-item.html?id=example4" class="block">
+                      <img src="https://via.placeholder.com/400x300/EEDDEE/806080?text=Comic+Cover" alt="Marketplace Item 4" class="rounded-t-lg w-full h-48 object-cover">
+                      <div class="p-4">
+                          <h3 class="text-xl font-semibold mb-1">Galaxy Heroes #5 Cover</h3>
+                          <p class="text-gray-500 text-sm mb-2">by Super Comics Inc.</p>
+                          <p class="text-gray-700 mb-3 text-sm">Exclusive cover art for an indie comic series. Print ready.</p>
+                          <div class="flex items-center justify-between">
+                              <span class="text-indigo-600 font-bold text-lg">$150</span>
+                              <span class="text-xs text-gray-500">Comics / Art</span>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+          </div>
+          <div class="mt-12 text-center">
+            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-semibold shadow-md transition">Load More</a>
+          </div>
+      </div>
+  </section>
+
+  <footer class="bg-gray-800 text-gray-400 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <p>&copy; 2025 Mixfil. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="terms.html" class="hover:text-white">Terms</a>
+        <a href="privacy.html" class="hover:text-white">Privacy</a>
+        <a href="contact.html" class="hover:text-white">Contact</a>
       </div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
